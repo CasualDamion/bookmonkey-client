@@ -1,8 +1,1 @@
-<app-input class="book-filter" [(value)]="bookSearchTerm"></app-input>
-
-@for (book of books | bookFilter: bookSearchTerm; track book.isbn) {
-  <app-book-card
-    [content]="book"
-    (detailClick)="goToBookDetails($event)"
-  />
-}
+<app-book/>
