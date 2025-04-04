@@ -20,8 +20,17 @@ import {BookApiService} from '../../services/book-api.service';
 })
 export class BookComponent {
   private readonly bookApi = inject(BookApiService);
-  books: Book[] = this.bookApi.getAll();
   bookSearchTerm = '';
+  books: Book[] = [];
+
+  constructor() {
+    this.bookApi
+      .getAll()
+      .subscribe({
+          next: books => this.books = books
+        }
+      );
+  }
 
   goToBookDetails(event: Book): void {
     console.log('Navigate to book details, soon...')
