@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {InputComponent} from '../../input/input.component';
-import {BookCardComponent} from './book-card/book-card.component';
-import {BookFilterPipe} from './book-filter/book-filter.pipe';
-import {Book} from './book';
+import {InputComponent} from '../../../shared/input/input.component';
+import {BookCardComponent} from '../book-card/book-card.component';
+import {BookFilterPipe} from '../../pipes/book-filter/book-filter.pipe';
+import {Book} from '../..';
 
 @Component({
   selector: 'app-book',
