@@ -1,0 +1,5 @@
+<h3 [style]="customStyle">{{ content().title }}</h3>
+<h4>{{ content().author }}</h4>
+<a (click)="handleDetailClick($event)" href="#">{{ content().link }}</a>
+<p [class]="paragraphClass">{{ content().abstract }}</p>
+<p><b>{{content().isbn}}</b></p>
