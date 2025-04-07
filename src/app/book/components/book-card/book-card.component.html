@@ -1,5 +1,10 @@
 <h3 [style]="customStyle">{{ content().title }}</h3>
-<h4>{{ content().author }}</h4>
-<a (click)="handleDetailClick($event)" href="#">{{ content().link }}</a>
+<h5>{{ content().subtitle }}</h5>
+<p><b>{{ content().isbn }}</b></p>
 <p [class]="paragraphClass">{{ content().abstract }}</p>
-<p><b>{{content().isbn}}</b></p>
+<p>{{ content().numPages }} Seiten </p>
+<h4>{{ content().author }}</h4>
+<p>{{ content().publisher }}</p>
+<p>{{ content().price }}</p>
+<img src="{{ content().cover }}" alt="Cover von {{content().title}}"/>
+<a (click)="handleDetailClick($event)" href="#">{{ content().link }}</a>
