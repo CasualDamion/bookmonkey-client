@@ -1,0 +1,14 @@
+@if (book) {
+  <h3 [style]="customStyle">{{ book.title }}</h3>
+  <h5>{{ book.subtitle }}</h5>
+  <p><b>{{ book.isbn }}</b></p>
+  <p>{{ book.abstract }}</p>
+  <p>{{ book.numPages }} Seiten </p>
+  <h4>{{ book.author }}</h4>
+  <p>{{ book.publisher }}</p>
+  <p>{{ book.price }}</p>
+  <img src="{{ book.cover }}" alt="Cover von {{book.title}}"/>
+}
+@else {
+  <p>book with <b>ISBN {{route.snapshot.paramMap.get('isbn')}}</b> not found</p>
+}
