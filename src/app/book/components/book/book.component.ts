@@ -5,7 +5,7 @@ import {BookFilterPipe} from '../../pipes/book-filter/book-filter.pipe';
 import {Book} from '../..';
 import {BookApiService} from '../../services/book-api.service';
 import {toSignal} from '@angular/core/rxjs-interop';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
     BookCardComponent,
     InputComponent,
     BookFilterPipe,
+    RouterLink,
   ],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
@@ -38,4 +39,8 @@ export class BookComponent {
     this.router.navigate(['/books', 'detail', book.isbn]);
   }
 
+  createNewBook(click: MouseEvent) {
+    click.preventDefault();
+    this.router.navigate(['/books', 'new']);
+  }
 }
