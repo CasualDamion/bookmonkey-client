@@ -16,4 +16,8 @@ export class BookApiService {
   getBookByIsbn(isbn: string): Observable<Book> {
     return this.httpClient.get<Book>(this.baseUrl + isbn);
   }
+
+  create(book: Book): Observable<Book> {
+    return this.httpClient.post<Book>(this.baseUrl, book);
+  }
 }
